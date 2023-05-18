@@ -28,11 +28,10 @@ jobs:
 
     - name: commit files
       run: 
-          git config --local user.email
-          "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "uptdate logs" --allow-empty)
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        git diff -index --quiet HEAD || (git commit -a -m "uptdate logs" --allow-empty)
 
     - name: push changes
       uses: ad-m/github-push-action@master
